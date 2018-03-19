@@ -1,7 +1,5 @@
 const path = require("path");
 
-console.log(process.cwd());
-
 module.exports = {
 	"entry": "./src/index.js",
 	"output": {
@@ -16,7 +14,9 @@ module.exports = {
 			use: {
 				loader: 'babel-loader',
 				options: {
-					presets: [['env', {module: "false"}]]
+					presets: [
+					[path.resolve(__dirname+ "/node_modules/babel-preset-env"), {module: "false"}]
+					]
 					}
 			}
 		}
