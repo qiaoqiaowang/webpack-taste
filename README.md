@@ -1,5 +1,5 @@
 # webpack-taste
-本地静态页面webpack构建工具---当需要快速在本地静态页使用新的es6语法或者新的webpack版本时，你需要它
+本地静态页面webpack构建工具---当需要快速在本地静态页使用新的es6语法或者新的webpack版本时或是验证react的某些特性的时候，你需要它
 
 # 使用方法
 1. git clone 到本地;
