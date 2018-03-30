@@ -9,25 +9,36 @@ module.exports = {
 	"module": {
 		"rules": [
 		{
-			test: /\.js$/,
-			exclude: /(node_modules)/,
-			use: {
+			test: /\.(js|jsx)$/,
+			exclude: /(node_modules|bower_components)/,
+			use: [{
 				loader: 'babel-loader',
 				options: {
 					presets: [
-					[path.resolve(__dirname+ "/node_modules/babel-preset-env"), {module: "false"}]
-					]
+					[path.resolve(__dirname+ "/node_modules/babel-preset-env"), {module: "false"}],
+					path.resolve(__dirname+ "/node_modules/babel-preset-react")
+					],
+					babelrc: false
 					}
-			}
+			}]
 		}
 		]
 	},
-	
+	resolve: {
+		extensions: ['.js', '.jsx'],
+		modules: [
+                path.join(__dirname, "node_modules")
+            ]
+	},
 	resolveLoader: {
             modules: [
                 path.join(__dirname, "node_modules")
             ]
-        },
+			},
 	
-	"mode": "development"
+	"mode": "development",
+	externals: {
+		"react": "React",
+		'react-dom': "ReactDOM"
+	}
 }
